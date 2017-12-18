@@ -258,7 +258,7 @@ class Line(object):
         """
 
 
-        
+
         # --------------------------------------------------------------
         # We have already implemented this  __repr__  function for you.
         # Do NOT modify it.
@@ -298,6 +298,12 @@ class Line(object):
           :type  line2: Line
           :rtype: bool
         """
+
+        if (self.start == line2.start) & (self.end == line2.end):
+            return True
+        else:
+            return False
+
         # --------------------------------------------------------------
         # We have already implemented this  __eq__  function for you.
         # Do NOT modify it.
@@ -333,8 +339,12 @@ class Line(object):
         Type hints:
           :rtype: Line
         """
+
+        line_clone = Line(self.start,self.end)
+        return line_clone
+
         # --------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -366,8 +376,13 @@ class Line(object):
             line1.reverse()
             print(line1 == line2)    # Should now print: True
         """
+
+        temp =self.start
+        self.start=self.end
+        self.end = temp
+
         # --------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -402,8 +417,14 @@ class Line(object):
         Type hints:
           :rtype: float
         """
+        if ((self.end.x-self.start.x)==0):
+            return math.inf
+        slope = (self.end.y - self.start.y) / (self.end.x-self.start.x)
+        return slope
+
+
         # --------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -411,6 +432,7 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
+
 
     def length(self):
         """
