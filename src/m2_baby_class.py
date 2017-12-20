@@ -2,8 +2,8 @@
 A   Baby   class and methods that use the Baby class.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Garrett Jacobs.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -81,6 +81,29 @@ def main():
 #     a side effect.
 # ----------------------------------------------------------------------
 
+class Baby(object):
+
+    def __init__(self,name):
+        print("Hello baby",name)
+        self.name = name
+        self.count=0
+
+    def feed_baby(self):
+        print('Thank you for feeding baby', self.name)
+        self.count = 0
+
+    def hour_passes(self):
+
+        if (self.count==0):
+            print('Baby', self.name, 'is sleeping.')
+        elif (self.count==1):
+            print('Baby',self.name, 'is awake.  Time for food.')
+        elif (self.count>=2):
+            print('Baby', self.name, 'is CRYING uncontrollably!  Feed the Baby!')
+
+        self.count= self.count+1
+
+
 ########################################################################
 # The   Baby   class (and its methods) should begins here.
 # Here is a reminder for the syntax to create a new class.
@@ -89,7 +112,6 @@ def main():
 #          """ Brief description of what objects of the class 'are'. """
 #
 ########################################################################
-
 
 
 
