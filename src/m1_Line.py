@@ -90,6 +90,7 @@ class Point(object):
         self.x = x
         self.y = y
 
+
     def __repr__(self):
         """
         Returns a string representation of this Point.
@@ -216,10 +217,11 @@ class Line(object):
           :type start: Point
           :type end:   Point
         """
-        self.startoriginal = self.start
-        self.endoriginal = self.end
+
         self.start = start.clone()
         self.end = end.clone()
+        self.startoriginal = start
+        self.endoriginal = end
         self.clonecount = 0
 
 
